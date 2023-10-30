@@ -133,8 +133,8 @@ h6 {
 
 .container,
 .container-fluid {
-  padding-left: 7%;
-  padding-right: 30px;
+  padding-left: 5%;
+  padding-right: 2%;
 }
 
 @media (max-width: 1199px) {
@@ -239,7 +239,7 @@ h6 {
 /* Fixed positioning for the bottom navigation bar */
 .bottom-nav-bar {
     position: fixed;
-    bottom: 0;
+    bottom: 15%;
     z-index: 1; /* Set a lower z-index to place it behind the main navigation bar */
 }
 
@@ -654,7 +654,7 @@ section {
 .portfolio-details .portfolio-details-slider {
     /* Set the container width and height */
     width: 80%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
+    height: 80%; /* Adjust as needed */
     margin-right: 0;
 }
 
@@ -718,9 +718,10 @@ section {
   margin-bottom: 20px;
 }
 
-.portfolio-details .portfolio-description p {
-  padding: 0;
-}
+    .portfolio-details .portfolio-description p {
+        padding: 0;
+        line-height: 1.8;
+    }
 
 /*--------------------------------------------------------------
 # Services
@@ -1189,7 +1190,7 @@ section {
         transition: all ease-in-out 0.3s;
         display: flex;
         justify-content: center;
-        align-items: flex-end; /* Align content to the bottom */
+        align-items: flex-end;  Align content to the bottom 
     }
 
         .gallery .gallery-wrap .gallery-links a {
@@ -1198,8 +1199,8 @@ section {
             text-align: center;
             background: rgba(20, 157, 221, 0.75);
             transition: 0.3s;
-            width: auto; /* Let each link be as wide as its content */
-            margin: 0 5px; /* Add some spacing between links */
+            width: auto;  Let each link be as wide as its content 
+            margin: 0 5px;  Add some spacing between links 
         }
 
             .gallery .gallery-wrap .gallery-links a:hover {
@@ -1222,3 +1223,30 @@ section {
         opacity: 1;
         bottom: 0;
     }
+
+.showcase-wrapper {
+    padding-bottom: 30px;
+}
+
+.showcase-wrapper img {
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.showcase-title {
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.showcase-title h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    color: #173b6c;
+}
+
+.showcase-text {
+    line-height: 1.8;
+}

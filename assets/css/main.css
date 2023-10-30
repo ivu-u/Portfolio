@@ -21,8 +21,8 @@
 :root {
     --color-default: #364d59;
     --color-primary: #aa86cd;
-    --color-secondary: #ff6d6b;
-    --color-background: #35373D
+    --color-secondary: white;
+    --color-background: #23263D
 }
 
 /* Smooth scroll behavior */
@@ -34,9 +34,10 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: var(--font-default);
-  color: var(--color-default);
-  overflow-x: hidden;
+    font-family: var(--font-default);
+    color: white;
+    overflow-x: hidden;
+    background-color: #364259;
 }
 
 a {
@@ -79,7 +80,7 @@ section {
   font-size: 32px;
   font-weight: 700;
   position: relative;
-  color: #2e3135;
+  color: white;
 }
 
 .section-header h2:before,
@@ -294,13 +295,14 @@ section {
   padding: 30px;
 }
 
-.recent-blog-posts .post-item .post-title {
-  font-size: 24px;
-  color: var(--color-secondary);
-  font-weight: 700;
-  transition: 0.3s;
-  margin-bottom: 15px;
-}
+    .recent-blog-posts .post-item .post-title {
+        font-size: 24px;
+        color: var(--color-secondary);
+        font-weight: 700;
+        transition: 0.3s;
+        margin-bottom: 2%;
+        text-align: center;
+    }
 
 .recent-blog-posts .post-item .meta i {
   font-size: 16px;
@@ -309,7 +311,7 @@ section {
 
 .recent-blog-posts .post-item .meta span {
   font-size: 15px;
-  color: #838893;
+  color: white;
 }
 
 .recent-blog-posts .post-item hr {
@@ -323,7 +325,7 @@ section {
   font-weight: 600;
   line-height: 1;
   transition: 0.3s;
-  color: #838893;
+  color: white;
 }
 
 .recent-blog-posts .post-item .readmore i {
@@ -332,10 +334,11 @@ section {
   font-size: 16px;
 }
 
-.recent-blog-posts .post-item:hover .post-title,
-.recent-blog-posts .post-item:hover .readmore {
-  color: var(--color-primary);
-}
+    .recent-blog-posts .post-item:hover .post-title,
+    .recent-blog-posts .post-item:hover .readmore,
+    .recent-blog-posts .post-item:hover a { /* Apply hover effect to anchor tags */
+        color: var(--color-primary);
+    }
 
 .recent-blog-posts .post-item:hover .post-img img {
   transform: scale(1.1);
@@ -349,13 +352,13 @@ section {
   background: url("../img/footer-bg.jpg") top center no-repeat;
   background-size: cover;
   font-size: 14px;
-  padding: 80px 0 60px 0;
+  padding: 2% 0 60px 0;
   position: relative;
 }
 
 .footer:before {
   content: "";
-  background: rgba(0, 0, 0, 0.8);
+/*  background: rgba(0, 0, 0, 0.8);*/
   position: absolute;
   inset: 0;
 }
@@ -453,4 +456,100 @@ section {
 
 .footer .footer-legal .credits a {
   color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+# All Games
+--------------------------------------------------------------*/
+#allGames {
+    background-color: var(--color-background);
+}
+
+.allGames .container {
+    padding: 10px;
+}
+
+.allGames .row {
+    margin-left: -15%; /* Adjust this value as needed */
+    margin-right: -15%; /* Adjust this value as needed */
+}
+
+.allGames .post-item {
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+    background-color: #535B70; /* #484F61*/
+    margin: 1.5%; /* Adjust the margin to control horizontal spacing */
+}
+
+    .allGames .post-item .post-img img {
+        transition: 0.5s;
+    }
+
+    .allGames .post-item .post-date {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-primary);
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 6px 12px;
+        font-weight: 500;
+    }
+
+    .allGames .post-item .post-content {
+        padding: 30px;
+    }
+
+    .allGames .post-item .post-title {
+        font-size: 24px;
+        color: var(--color-secondary);
+        font-weight: 700;
+        transition: 0.3s;
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    .allGames .post-item .meta i {
+        font-size: 16px;
+        color: var(--color-primary);
+    }
+
+    .allGames .post-item .meta span {
+        font-size: 15px;
+        color: white;
+    }
+
+    .allGames .post-item hr {
+        color: #888;
+        margin: 20px 0;
+    }
+
+    .allGames .post-item .readmore {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        line-height: 1;
+        transition: 0.3s;
+        color: white;
+    }
+
+        .allGames .post-item .readmore i {
+            line-height: 0;
+            margin-left: 6px;
+            font-size: 16px;
+        }
+
+    .allGames .post-item:hover .post-title,
+    .allGames .post-item:hover .readmore,
+    .allGames .post-item:hover a { /* Apply hover effect to anchor tags */
+        color: var(--color-primary);
+    }
+
+    .allGames .post-item:hover .post-img img {
+        transform: scale(1.1);
+    }
+
+.allgames .post-item {
+    transition: 0.3s;
 }

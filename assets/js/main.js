@@ -259,4 +259,9 @@
    */
   new PureCounter();
 
+
 })()
+
+function goBack() {
+    window.history.back();
+}
