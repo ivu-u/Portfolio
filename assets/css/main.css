@@ -22,7 +22,7 @@
     --color-default: #364d59;
     --color-primary: #aa86cd;
     --color-secondary: white;
-    --color-background: #23263D
+    --color-background: #23263D;
 }
 
 /* Smooth scroll behavior */
@@ -336,7 +336,7 @@ section {
 
     .recent-blog-posts .post-item:hover .post-title,
     .recent-blog-posts .post-item:hover .readmore,
-    .recent-blog-posts .post-item:hover a { /* Apply hover effect to anchor tags */
+    .recent-blog-posts .post-item:hover a {  Apply hover effect to anchor tags 
         color: var(--color-primary);
     }
 
