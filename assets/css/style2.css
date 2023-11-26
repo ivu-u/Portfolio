@@ -13,11 +13,13 @@
     --color-water: #3D5FAB;
     --color-sandy: #DBC093;
     --color-card: #C9C4CF;
+    --color-black: #212431;
 }
 
 /* Values */
 :root {
-    --line-width: 4px;
+    --outline-style: 4px solid ghostwhite;
+    --border-radius: 8px;
 }
 
 /* Smooth scroll behavior */
@@ -183,7 +185,7 @@ section {
     background-color: var(--color-card);
     box-shadow: 10px 12px 4px rgba(0, 0, 0, 0.4);
     padding-bottom: calc(131 / 100 * 100%);
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     outline: 10px solid white;
     transition: outline-color 0.3s;
 }
@@ -193,7 +195,7 @@ section {
     top: 80%; /* Adjust as needed */
     left: 50%; /* Adjust as needed */
     transform: translate(-50%, -50%);
-    color: black; /* Example styling for content */
+    color: var(--color-black); /* Example styling for content */
     text-align: center; /* Example styling for content */
     z-index: 1; /* Ensure content is above the image */
 }
@@ -241,43 +243,34 @@ section {
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.waves-container {
-    background: url('../img/waves.png') repeat-x;
-    height: 126px;  /*the height of the image*/
-    position: relative;
-    overflow: hidden;
-}
-
-.reef-container {
-    background: url('../img/reef.png');
-    background-size: cover;
-    width: 100%;
-    height: 800px;
-    overflow: hidden;
-    position: relative;
-}
-
 #portfolio {
     background-color: var(--color-water);
 }
 
-.portfolio .portfolio-header {
-    text-align: left;
-    padding-bottom: 0px;
+.portfolio .portfolio-title {
+    position: relative;
 }
 
-    .portfolio .portfolio-header h2 {
-        font-family: var(--font-titles-700);
-        font-size: 65px;
-        font-weight: 700;
+    .portfolio .portfolio-title h2::after {
+        content: '';
+        display: inline-block;
+        width: 1em; /* Set a default width for the pseudo-element */
+        height: 1em; /* Set a default height for the pseudo-element */
+        background: url('../img/fish.png') no-repeat; /* URL to your image */
+        background-size: contain; /* Adjust the image size */
+        margin-left: 10px; /* Adjust the spacing between h2 and the image */
+        vertical-align: bottom; /* Aligns the image vertically */
         position: relative;
-        color: var(--color-white);
+        top: .1em; /* Adjust vertical position if needed */
     }
 
 .portfolio .portfolio-video {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio (height:width ratio) for the video */
+    padding-bottom: 56.25%; /*16:9 aspect ratio (height:width ratio) for the video*/
+    transition: 0.3s ease;
+    outline: var(--outline-style);
+    border-radius: var(--border-radius);
 }
 
     .portfolio .portfolio-video video {
@@ -286,8 +279,49 @@ section {
         left: 0;
         width: 100%;
         height: 100%;
-        border-radius: 8px;
-        outline: var(--line-width) solid var(--color-white);
+        border-radius: var(--border-radius);
+    }
+
+    .portfolio .portfolio-video .video-placeholder {
+        position: absolute;
+        display: block;
+        z-index: 1;
+    }
+
+        .portfolio .portfolio-video .video-placeholder img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+        }
+
+    .portfolio .portfolio-video .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        background-color: rgba(0, 0, 0, 0.0);
+        border: none;
+        border-radius: 50%;
+    }
+
+        .portfolio .portfolio-video .play-button img {
+            width: 100%;
+            height: auto;
+            outline: none;
+            opacity: 0.9;
+            transition: transform 0.3s ease;
+        }
+
+    .portfolio .portfolio-video:hover {
+        transform: scale(1.05);
+        outline-color: var(--color-sandy);
+    }
+
+    .portfolio .portfolio-video .video-placeholder:hover .play-button img {
+        transform: scale(1.2);
     }
 
 .portfolio .portfolio-img {
@@ -303,37 +337,14 @@ section {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    border-radius: 8px;
-    outline: var(--line-width) solid var(--color-white);
+    border-radius: var(--border-radius);
+    outline: var(--outline-style);
     margin: 30px 0px 30px 0px;
 }
 
-/*creates a translucent film but hides it until hover*/
-    .portfolio .portfolio-wrap::before {
-        content: '';
-        background: rgba(248, 248, 255, 0.4);
-        position: absolute;
-        left: 0px;
-        right: 0px;
-        top: 0px;
-        bottom: 0px;
-        border-radius: 8px;
-        transition: all ease-in-out 0.3s;
-        z-index: 2;
-        opacity: 0;
-    }
-
-    .portfolio .portfolio-wrap:hover::before {
-        top: 0px;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
-        border-radius: 8px;
-        opacity: 1;
-    }
-
 .portfolio .portfolio-wrap:hover {
-    outline-color: var(--color-primary);
+    transform: scale(1.1);
+    outline-color: var(--color-sandy);
 }
 
 .portfolio h3 {
@@ -348,6 +359,111 @@ section {
     font-size: 35px;
 }
 
+/*--------------------------------------------------------------
+# About Me Section
+--------------------------------------------------------------*/
+#about-me {
+    background-color: #182A48;
+}
+
+.about-me img {
+    outline: var(--outline-style);
+    border-radius: var(--border-radius);
+}
+
+.about-me .title h2 {
+    text-align: left;
+}
+
+.about-me h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--color-primary);
+    display: inline-block;
+    margin: 0 0 10px 15px;
+}
+
+.about-me h3 {
+    font-family: var(--font-primary-700);
+    color: var(--color-primary);
+}
+
+.about-me p {
+    font-size: 35px;
+}
+
+.about-me ul {
+    list-style: none;
+    padding: 0;
+    font-size: 20px;
+}
+
+    .about-me ul li {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .about-me ul strong {
+        margin-right: 10px;
+        margin-left: 10px;
+        color: var(--color-primary);
+    }
+
+    .about-me p:last-child {
+        margin-bottom: 0px;
+    }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    background-color: var(--color-sandy);
+    align-items: center;
+}
+
+.footer h1 {
+    font-family: var(--font-titles-700);
+    color: var(--color-black);
+    font-size: 50px;
+    font-weight: 700;
+    padding-top: 8px;
+}
+
+.footer .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #212431;
+    color: #fff;
+    line-height: 1;
+    margin-right: 10px;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+    border-radius: var(--border-radius);
+}
+
+    .footer .social-links a:hover {
+        background: var(--color-primary);
+        color: #fff;
+        text-decoration: none;
+    }
+
+.footer .footer-legal .copyright {
+    padding-top: 30px;
+    border-top: 1.5px solid #C9B087;
+}
+
+.footer .footer-legal .credits {
+    padding-top: 4px;
+    font-size: 13px;
+    color: var(--color-black);
+}
+
+    .footer .footer-legal .credits a {
+        color: var(--color-primary);
+    }
 
 /*--------------------------------------------------------------
 # Generics
@@ -360,4 +476,20 @@ section {
     .my-container {
         max-width: 60%;
     }
+}
+
+.waves-container {
+    background: url('../img/waves.png') repeat-x;
+    height: 126px; /*the height of the image*/
+    position: relative;
+    overflow: hidden;
+}
+
+.reef-container {
+    background: url('../img/reef.png');
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+    overflow: hidden;
+    position: relative;
 }

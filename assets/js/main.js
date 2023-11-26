@@ -257,7 +257,25 @@
   /**
    * Initiate Pure Counter 
    */
-  new PureCounter();
+    new PureCounter();
+
+    /**
+     * custom thing for video thumbnail
+     */
+    document.addEventListener("DOMContentLoaded", function () {
+        const playButtons = document.querySelectorAll('.play-button');
+
+        playButtons.forEach(playButton => {
+            playButton.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video-id');
+                const video = document.querySelector(`.actual-video[data-video-id="${videoId}"]`);
+                const placeholder = document.querySelector(`.video-placeholder[data-video-id="${videoId}"]`);
+
+                video.play();
+                placeholder.style.display = 'none';
+            });
+        });
+    });
 
 
 })()
