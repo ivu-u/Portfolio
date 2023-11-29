@@ -277,6 +277,15 @@
         });
     });
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const backButton = document.getElementById('back-button');
+
+        backButton.addEventListener('click', function () {
+            // Replace 'main.html' with the URL of your main page
+            window.location.href = 'index.html';
+        });
+    });
+
 })()
 
 function goBack() {

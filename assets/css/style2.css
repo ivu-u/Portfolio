@@ -190,6 +190,17 @@ section {
     transition: outline-color 0.3s;
 }
 
+    .main-page .card-container {
+        margin: 0 auto;
+    }
+
+@media (min-width: 1199px) {
+    .card-container {
+        max-width: 75%;
+    }
+}
+
+
 .card-box .content {
     position: absolute;
     top: 80%; /* Adjust as needed */
@@ -203,7 +214,8 @@ section {
     .card-box .content h1 {
         font-family: var(--font-titles-700);
         font-weight: 800;
-        font-size: 50px;
+        font-size: 3em;
+        line-height: 0.5;
     }
 
     .card-box .img-container {
@@ -213,12 +225,27 @@ section {
         overflow: hidden;
     }
 
-    .card-box .img-container img {
+    .card-box .img-container .background-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .card-box .img-container .background-img img {
         width: 100%;
         height: 100%;
         object-fit: cover; /* Crop the image to cover the entire container */
         object-position: center; /* Position the image at the center */
     }
+
+        .card-box .img-container .overlay-image {
+            position: absolute;
+            top: 60%;
+            left: 60%;
+            width: 60%; /* Adjust the size of the overlay image */
+            transform: translate(-65%, -70%);
+            z-index: 2;
+            image-rendering: pixelated;
+        }
 
     .card-box .img-container::after {
         content: "";
@@ -262,6 +289,10 @@ section {
         vertical-align: bottom; /* Aligns the image vertically */
         position: relative;
         top: .1em; /* Adjust vertical position if needed */
+    }
+
+    .portfolio .portfolio-title strong {
+        color: var(--color-sandy);
     }
 
 .portfolio .portfolio-video {
@@ -339,7 +370,7 @@ section {
     z-index: 1;
     border-radius: var(--border-radius);
     outline: var(--outline-style);
-    margin: 30px 0px 30px 0px;
+    margin: 30px 3px 30px 3px;
 }
 
 .portfolio .portfolio-wrap:hover {
@@ -489,7 +520,36 @@ section {
     background: url('../img/reef.png');
     background-size: cover;
     width: 100%;
-    height: 800px;
+    height: 850px;
     overflow: hidden;
     position: relative;
+    image-rendering: pixelated;
 }
+
+.circle-button {
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-primary); /* Change color as needed */
+    border-radius: 50%; /* Makes the element a circle */
+    position: fixed;
+    top: 20px; /* Adjust distance from the top */
+    left: 20px; /* Adjust distance from the left */
+    z-index: 999; /* Set a high z-index to keep it above other content */
+    /* Add other styles like icon or text */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+    .circle-button img {
+        width: 70%;
+        height: 70%;
+    }
+
+.circle-button:hover img {
+    transform: scale(1.1);
+}
+
